@@ -1,0 +1,48 @@
+﻿@model Inforvet.Models.Utente
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-5 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://cdn-icons-png.flaticon.com/512/194/194279.png"><span class="font-weight-bold">@Html.DisplayFor(model => model.Name)</span><span> </span></div>
+        </div>
+        <div class="col-md-7 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Detalhes do Animal</h4>
+                </div>
+
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <div class="row mt-2">
+                        <div class="col-md-6"><label asp-for="Name" class="labels">Nome</label><input asp-for="Name" type="text" class="form-control"></div>
+                    </div>
+
+                        <div class="row mt-2">
+                            <div class="col-md-6"><label asp-for="Race" class="labels">Raça</label><input asp-for="Race" type="text" class="form-control"></div>
+                            <div class="col-md-6"><label asp-for="Sex" class="labels">Sexo</label><input asp-for="Sex" type="text" class="form-control"></div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-6"><label asp-for="Weight" class="labels">Peso</label><input asp-for="Weight" type="text" class="form-control"></div>
+                            <div class="col-md-6"><label asp-for="State" class="labels">Estado</label><input asp-for="State" type="text" class="form-control"></div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-6"><label asp-for="ClienteId" class="control-label"></label><select asp-for="ClienteId" class="form-control" asp-items="ViewBag.ClientId"></select></div>   
+                        </div>
+                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit" value="Save">Save Profile</button></div>
+
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,24 @@
+.form-control:focus[b-afen7d0000] {
+    box-shadow: none;
+    border-color: #BA68C8
+}
+
+.profile-button[b-afen7d0000] {
+    background: rgb(54, 138, 216);
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover[b-afen7d0000] {
+    background: #2825da
+}
+
+
+.back:hover[b-afen7d0000] {
+    color: #682773;
+    cursor: pointer
+}
+
+.labels[b-afen7d0000] {
+    font-size: 11px
+}
